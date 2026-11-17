@@ -636,6 +636,8 @@ struct nrf_wifi_sys_fmac_dev_ctx {
 	unsigned char num_sta;
 	/** Number of interfaces in AP mode. */
 	unsigned char num_ap;
+	/** Broadcast/multicast RX disabled (NRF_WIFI_CMD_BCAST_RX_CONFIG), re-sent on init. */
+	unsigned char bcast_rx_disable;
 	/** Queue for storing mapping info of RX buffers. */
 	struct nrf_wifi_fmac_buf_map_info *rx_buf_info;
 #if defined(CONFIG_NRF71_STA_MODE) || defined(CONFIG_NRF71_RAW_DATA_RX)

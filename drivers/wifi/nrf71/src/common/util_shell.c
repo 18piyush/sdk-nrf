@@ -1265,6 +1265,7 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 		      "Broadcast/multicast received while awake for another reason still\n"
 		      "goes to the host.\n"
 		      "1 (default): the broadcast TIM is honored.\n"
+		      "A disconnect sets it back to 1.\n"
 		      "Without an argument, shows the current setting.",
 		      nrf_wifi_util_bcast_tim,
 		      1,

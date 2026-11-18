@@ -1187,8 +1187,10 @@ enum nrf_wifi_status nrf_wifi_fmac_req_extended_sleep(void *fmac_dev_ctx,
  * still go to the host.
  *
  * This function sends %NRF_WIFI_CMD_BCAST_RX_CONFIG to the RPU firmware (UMAC
- * forwards it to LMAC) and needs a firmware patch that supports it. The host
- * keeps the setting and sends it again after a firmware re-init.
+ * forwards it to LMAC) and needs a firmware patch that supports it. The
+ * setting applies until the next disconnect (deauthentication or
+ * disassociation), after which the broadcast TIM is honored again; the host
+ * also sends it again after a firmware re-init.
  *
  * @retval NRF_WIFI_STATUS_SUCCESS On success.
  * @retval NRF_WIFI_STATUS_FAIL On failure to execute command.
